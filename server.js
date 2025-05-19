@@ -63,6 +63,6 @@ app.listen(PORT, () => {
 
 // GET column config
 app.get('/config', (req, res) => {
-  res.json(colConfig);
+  res.json(col_config);
 });
 
