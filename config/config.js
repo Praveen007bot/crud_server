@@ -60,6 +60,78 @@ const col_config = [
   }
 ]
 
+const col_config2 = [
+    {
+        name: "fullName",
+        label: "Full Name",
+        type: "text",
+        validation: {
+            required: "Full name is required",
+            minLength: { value: 3, message: "Minimum 3 characters" }
+        }
+    },
+    {
+        name: "email",
+        label: "Email",
+        type: "email",
+        duplicateCheck: true,
+        validation: {
+            required: "Email is required",
+            pattern: {
+                value: /^\S+@\S+$/i,
+                message: "Invalid email format"
+            }
+        }
+    },
+    {
+        name: "age",
+        label: "Age",
+        type: "number",
+        validation: {
+            required: "Age is required",
+            min: { value: 18, message: "Must be 18 or older" }
+        }
+    },
+    {
+        name: "phone",
+        label: "Phone",
+        type: "tel",
+        validation: {
+            required: "Phone number is required",
+            pattern: {
+                value: /^[0-9]{10}$/,
+                message: "Phone must be 10 digits"
+            }
+        }
+    },
+    {
+        name: "gender",
+        label: "Gender",
+        type: "radio",
+        options: ["Male", "Female"],
+        validation: {
+            required: "Please select a gender"
+        }
+    },
+    {
+        name: "country",
+        label: "Country",
+        type: "select",
+        options: ["India", "USA", "UK", "Australia"],
+        validation: {
+            required: "Please select a country"
+        }
+    },
+    {
+        name: "terms",
+        label: "Accept Terms & Conditions",
+        type: "checkbox",
+        validation: {
+            required: "You must accept the terms"
+        }
+    }
+];
+
 
 
 const row_data = [
@@ -567,6 +639,7 @@ const row_data = [
 
 
 module.exports = {
-  row_data,
-  col_config
+    row_data,
+    col_config,
+    col_config2
 };

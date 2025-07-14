@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const { row_data, col_config } = require('./config/config');
+const { row_data, col_config, col_config2 } = require('./config/config');
 
 
 const app = express();
@@ -64,5 +64,9 @@ app.listen(PORT, () => {
 // GET column config
 app.get('/config', (req, res) => {
   res.json(col_config);
+});
+
+app.get('/config2', (req, res) => {
+  res.json(col_config2);
 });
 
